@@ -146,6 +146,25 @@ exports.postMediaHome = (req, res, next)=>{
     .catch(err=>console.log(err))
 }
 
+exports.postBannerVideo = (req, res, next)=>{
+    const id = req.body.id
+    const link = req.body.link
+
+    const post = new home({
+        id: id,
+        link: link
+    })
+
+    post.save()
+    .then(result=>{
+        res.status(201).json({
+            message: 'banner video berhasil di post',
+            data: result
+        })
+    })
+    .catch(err=>console.log(err))
+}
+
 exports.get = (req, res, next)=>{
     let totalItems;
 

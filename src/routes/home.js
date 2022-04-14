@@ -10,6 +10,7 @@ router.post('/post/jajaran-pimpinan/data-pimpinan/:_id', useControllers.postData
 router.post('/post/testimoni', useControllers.postTestimoni)
 router.post('/post/testimoni/komentar/:_id', useControllers.postKomentar)
 router.post('/post/media-home', useControllers.postMediaHome)
+router.post('/post/banner-video', useControllers.postBannerVideo)
 router.get('/get', useControllers.get)
 
 module.exports = router
