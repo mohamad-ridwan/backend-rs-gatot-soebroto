@@ -31,7 +31,7 @@ exports.postDataLaporan = (req, res, next)=>{
     const years = new Date().getFullYear()
     const dateNow = new Date().getDate()
     const month = new Date().getMonth()
-    const day = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1
+    const day = new Date().getDay() === 0 ? 6 : new Date().getDay()
 
     const getHours = new Date().getHours()
     const hours = getHours.toString().length === 1 ? `0${getHours}` : getHours
