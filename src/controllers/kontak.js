@@ -25,24 +25,11 @@ exports.post = (req, res, next)=>{
 exports.postData = (req, res, next)=>{
     const _id = req.params._id
 
-    const nameDay = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
-    const nameMonth = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
-
-    const years = new Date().getFullYear()
-    const dateNow = new Date().getDate()
-    const month = new Date().getMonth()
-    const day = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1
-
-    const getHours = new Date().getHours()
-    const hours = getHours.toString().length === 1 ? `0${getHours}` : getHours
-    const getMinute = new Date().getMinutes()
-    const minute = getMinute.toString().length === 1 ? `0${getMinute}` : getMinute
-
     const id = `${new Date().getTime()}`
     const nama = req.body.nama
     const email = req.body.email
     const pesan = req.body.pesan
-    const date = `${nameDay[day]}, ${dateNow} ${nameMonth[month]} ${years} ${hours}:${minute}`
+    const date = req.body.date
 
     const data = [{
         id: id,
