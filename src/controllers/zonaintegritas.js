@@ -51,7 +51,7 @@ exports.postDataLaporan = (req, res, next)=>{
     )
     .then(result=>{
         res.status(201).json({
-            message: 'data laporan zona integritas berhasil di post',
+            message: 'data laporan zona integritas berhasil di post.',
             data: result
         })
     })
