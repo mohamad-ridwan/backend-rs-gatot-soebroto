@@ -25,19 +25,6 @@ exports.post = (req, res, next)=>{
 exports.postDataLaporan = (req, res, next)=>{
     const _id = req.params._id
 
-    const nameDay = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
-    const nameMonth = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
-
-    const years = new Date().getFullYear()
-    const dateNow = new Date().getDate()
-    const month = new Date().getMonth()
-    const day = new Date().getDay() === 0 ? 7 : new Date().getDay()
-
-    const getHours = new Date().getHours()
-    const hours = getHours.toString().length === 1 ? `0${getHours}` : getHours
-    const getMinute = new Date().getMinutes()
-    const minute = getMinute.toString().length === 1 ? `0${getMinute}` : getMinute
-
     const nama = req.body.nama
     const email = req.body.email
     const alamat = req.body.alamat
@@ -45,7 +32,7 @@ exports.postDataLaporan = (req, res, next)=>{
     const waktuKejadian = req.body.waktuKejadian
     const detailPengaduan = req.body.detailPengaduan
     const image = req.file.path
-    const date = `${nameDay[day]}, ${dateNow} ${nameMonth[month]} ${years} ${hours}:${minute}`
+    const date = req.body.date
 
     const data = [{
         nama: nama,
